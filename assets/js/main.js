@@ -16,8 +16,11 @@ inputFields.forEach(input => {
         clearTimeout(timeoutId);
 
         timeoutId = setTimeout(() => {
+            if (e.target.value==''){
+                clearInputs();
+            }else{
             const lengthInMeters = eval(`${e.target.value} ${lengthEquation}`);
-            convertToLengthUnits(lengthInMeters);
+            convertToLengthUnits(lengthInMeters);}
         }, 300);
     });
 });
